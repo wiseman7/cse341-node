@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "name": "cse341-node",
+  "version": "1.0.0",
+  "description": "Project turn in for cse341",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiseman7/cse341-node.git#master"
+  },
+  "author": "Britany Wiseman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wiseman7/cse341-node/issues"
+  },
+  "homepage": "https://github.com/wiseman7/cse341-node/tree/master#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
