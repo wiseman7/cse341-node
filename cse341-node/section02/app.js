@@ -9,6 +9,7 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false})); // This will parse the body, goes through the req,res, and next
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/admin', adminRoutes); // this is an object
 app.use(shopRoutes);
