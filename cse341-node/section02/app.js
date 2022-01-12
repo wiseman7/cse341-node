@@ -6,8 +6,7 @@ const expressHbs = require('express-handlebars');
 
 const app = express();
 
-app.engine('hbs', expressHbs()); // ('give it a name', call it as a function)
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.set('views', 'views')
 // app.set('view engine', 'pug'); //compile dynamic templates with pug
 
