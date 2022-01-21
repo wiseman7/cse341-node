@@ -39,10 +39,10 @@
                 <label for="description">Description</label>
                 <textarea name="description" 
                     id="description" 
-                    rows="5"><% if (editing) { %><%= product.description %><% }%></textarea>
+                    rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
             </div>
-            <% if (editing) %>
-                <input type="hidden" value="<% product.id %>" name="productId">
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product.id %>" name="productId">
             <% } %>
 
 
