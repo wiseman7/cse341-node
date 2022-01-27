@@ -2,10 +2,10 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-// const expressHbs = require('express-handlebars');
 
 const errorController = require('./controllers/error');
 const mongoConnect = require('./util/database').mongoConnect;
+const User = require('./models/user');
 
 
 const app = express();
@@ -16,17 +16,18 @@ app.set('views', 'views')
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({extended: false})); // This will parse the body, goes through the req,res, and next
+app.use(bodyParser.urlencoded({
+    extended: false
+})); // This will parse the body, goes through the req,res, and next
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-    // User.findById(1)
-    //     .then(user => {
-    //         req.user = user;
-    //         next();
-    //     })
-    //     .catch(err => console.log(err));
-    next();
+    User.findById('61f2ea972bde54c53c5b9120')
+        .then(user => {
+            req.user = new User(user.name, user.email, user.cart, user._id);
+            next();
+        })
+        .catch(err => console.log(err));
 });
 
 app.use('/admin', adminRoutes);
